@@ -21,6 +21,10 @@ class NetworkTest < Minitest::Test
     assert_instance_of Network, @nbc
   end
 
+  def test_has_attributes
+    assert_equal "NBC", @nbc.name
+    assert_equal [], @nbc.shows
+  end
 
 end
 # pry(main)> nbc = Network.new("NBC")
