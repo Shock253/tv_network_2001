@@ -29,10 +29,10 @@ class ShowTest < Minitest::Test
     assert_equal "David Hasselhoff", @knight_rider.highest_paid_actor
   end
 
-end
+  def test_returns_actor_names
+    assert_equal ["David Hasselhoff", "William Daniels"], @knight_rider.actors
+  end
 
-# pry(main)> knight_rider.highest_paid_actor
-# # => "David Hasselhoff"
-#
+end
 # pry(main)> knight_rider.actors
 # # => ["David Hasselhoff", "William Daniels"]
