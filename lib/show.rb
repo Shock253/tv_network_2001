@@ -6,4 +6,9 @@ class Show
     @characters = characters
   end
 
+  def total_salary
+    @characters.reduce(0) {|total, character| total + character.salary}
+  end
+
+
 end
