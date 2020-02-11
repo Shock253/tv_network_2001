@@ -13,19 +13,10 @@ class CharacterTest < Minitest::Test
     assert_instance_of Character, @kitt
   end
 
-end
+  def test_can_access_hash_attributes
+    assert_equal "KITT", @kitt.name
+    assert_equal "William Daniels", @kitt.actor
+    assert_equal 1000000, @kitt.salary
+  end
 
-# pry(main)> require './lib/character'
-# # => true
-#
-# pry(main)> kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
-# # => #<Character:0x00007f98a4ba8dc8...>
-#
-# pry(main)> kitt.name
-# # => "KITT"
-#
-# pry(main)> kitt.actor
-# # => "William Daniels"
-#
-# pry(main)> kitt.salary
-# # => 1000000
+end
