@@ -10,5 +10,7 @@ class Show
     @characters.reduce(0) {|total, character| total + character.salary}
   end
 
-
+  def highest_paid_actor
+    @characters.max_by {|character| character.salary}.actor
+  end
 end
