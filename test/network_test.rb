@@ -40,17 +40,20 @@ class NetworkTest < Minitest::Test
     assert_equal [@kitt], @nbc.main_characters
   end
 
+  def test_can_get_actors_by_show
+    @nbc.add_show(@knight_rider)
+    @nbc.add_show(@parks_and_rec)
+
+    expected = {
+      @knight_rider => ["David Hasselhoff", "William Daniels"],
+      @parks_and_rec => ["Amy Poehler", "Nick Offerman"]
+    }
+
+    assert_equal expected, @nbc.actors_by_show
+
+  end
+
 end
-# pry(main)> nbc.add_show(knight_rider)
-#
-# pry(main)> nbc.add_show(parks_and_rec)
-#
-# pry(main)> nbc.shows
-# # => [#<Show:0x00007fe5f8398970...>, #<Show:0x00007fe5f88b0a20...>]
-#
-# pry(main)> nbc.main_characters
-# # => [#<Character:0x00007f98a4ba8dc8...>]
-#
 # pry(main)> nbc.actors_by_show
 # # => {
 #       #<Show:0x00007fe5f8398970...> => ["David Hasselhoff", "William Daniels"],
